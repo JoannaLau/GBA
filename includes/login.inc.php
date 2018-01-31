@@ -17,6 +17,9 @@ if (isset($_POST['submit'])){
     //error handlers
     //check for empty fields
     if(empty($username)||empty($password)){
+          $_SESSION['errors'] = array("Your username or password was incorrect.");
+               
+        
         header("Location: ../index.php?login=empty");
         exit();
     }else{
@@ -26,6 +29,10 @@ if (isset($_POST['submit'])){
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
         if($resultCheck<1){
+            
+        $_SESSION['errors'] = array("Your username or password was incorrect.");
+        
+            
          header("Location: ../index.php?login=error");
         exit();
         } else{
@@ -35,7 +42,8 @@ if (isset($_POST['submit'])){
 
 
                 if($hashedPwdCheck==false){
-                    
+                    $_SESSION['errors'] = array("Your username or password was incorrect.");
+               
                      header("Location: ../index.php?login=error");
                         exit();
                     

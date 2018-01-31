@@ -86,6 +86,21 @@ session_start();
                 <div class="card-body" style="padding:10%; border-bottom: 0.4em solid #006CFF;">
                     <h3 class="card-title">Gregg's Business Agency</h3>
 
+                    
+                    
+                    
+                    <?php if (isset($_SESSION['errors'])): ?>
+                    <div class="form-errors">
+                        <?php foreach($_SESSION['errors'] as $error): ?>
+                            <span style="color:red;"><?php echo $error ?></span>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <?php endif; ?>
+                    <?php  session_unset();
+                    session_destroy(); ?>
+                    
+                    
                     <form action="includes/login.inc.php" method="POST">
                     <div class="input-group mb-3" style="padding-top:2em;">
                         <div class="input-group-prepend">
