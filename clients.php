@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+
+session_start();
+
+?>
 <html lang="en">
 
 <head>
@@ -19,6 +23,20 @@
 
 </head>
 
+          
+    <?php
+  
+    if(isset($_SESSION['u_id'])){
+                    
+    } else{
+         header("Location: ./index.php");
+        exit();
+                    
+    }
+    ?>
+    
+  
+    
 <body>
 
     <div id="wrapper" class="toggled">
@@ -30,7 +48,13 @@
                 <li class="sidebar-brand" style="padding-top: 13px;">
                 <h1 class="avenir">GBA</h1>
                     <br>
-                <h6 class="avenir-light">Welcome, Keith Ng!</h6> 
+                <h6 class="avenir-light">Welcome, 
+                    
+                            
+                <?php
+                    
+                    echo $_SESSION['u_first']; ?>
+                    !</h6> 
               
                 </li>
          
@@ -74,17 +98,13 @@
                     &nbsp;
                 </li>
                 
-                 <li>
-                    &nbsp;
-                </li>
-                
-                 <li>
-                    &nbsp;
-                </li>
+            
+            <form action="includes/logout.inc.php" method="POST">
                 
                 
+                <center>  <button type="submit" name="submit" class="btn custom-btn teal small shadow" style="width:140px;">LOG OUT</button></center>
+                </form>
                 
-                <center>  <button type="button" class="btn custom-btn teal small shadow" style="width:140px;">LOG OUT</button></center>
                 
                 
             </ul>
@@ -122,7 +142,7 @@
                 
            
 <div class="shadow custom-round content" style="background-color: white;">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        
 </div>      
              
             </div>

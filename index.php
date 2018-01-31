@@ -1,0 +1,122 @@
+<?php
+
+session_start();
+
+?>
+
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <!-- Bootstrap CSS -->
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <title>GBA Login</title>
+
+    
+
+
+</head>
+
+<body>
+
+      
+    <?php
+  
+    if(isset($_SESSION['u_id'])){
+                    header("Location: ./clients.php");
+                        exit();
+    }
+    ?>
+    
+    
+    
+    
+    <div class="container">
+            <svg width="inherit" height="auto">
+              <defs>
+                <linearGradient id="grad1" x1="20%" y1="60%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#A7FFE4;stop-opacity:1" >
+                    <animate attributeName="stop-color" values="#A7FFE4;#006CFF;#A7FFE4" dur="7s" repeatCount="indefinite"></animate>
+                    </stop>
+                  <stop offset="100%" style="stop-color:#006CFF;stop-opacity:1" />
+                      
+                    
+                    
+                </linearGradient>
+                  <linearGradient id="grad2" x1="20%" y1="90%" x2="10%" y2="20%">
+                  <stop offset="0%" style="stop-color:#A7FFE4;stop-opacity:1" >
+                      <animate attributeName="stop-color" values="#A7FFE4;#006CFF;#A7FFE4" dur="4s" repeatCount="indefinite"></animate>
+                    </stop>
+                  <stop offset="100%" style="stop-color:#006CFF;stop-opacity:1" />
+                </linearGradient>
+                  <linearGradient id="grad3" x1="20%" y1="90%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#A7FFE4;stop-opacity:1">
+                      <animate attributeName="stop-color" values="#A7FFE4;#006CFF;#A7FFE4" dur="6s" repeatCount="indefinite"></animate>
+                    </stop>
+                  <stop offset="100%" style="stop-color:#006CFF;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <ellipse cx="850" cy="410" rx="135" ry="135" fill="url(#grad1)" />
+              <ellipse cx="800" cy="600" rx="95" ry="95" fill="url(#grad2)" />
+              <ellipse cx="350" cy="300" rx="185" ry="185" fill="url(#grad3)" />
+            
+                Sorry, your browser does not support inline SVG.
+                
+                
+            </svg>
+    
+    </div>
+    
+    <div class="container" style="position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); padding:5%;">
+        <center>
+
+          
+
+            
+            <div class="card w-50 shadow" style="border: 0px !important;">
+                <div class="card-body" style="padding:10%; border-bottom: 0.4em solid #006CFF;">
+                    <h3 class="card-title">Gregg's Business Agency</h3>
+
+                    <form action="includes/login.inc.php" method="POST">
+                    <div class="input-group mb-3" style="padding-top:2em;">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+       <i class="fa fa-user"></i>&nbsp;</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" name="username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend"> <span class="input-group-text" id="basic-addon1">
+      <i class="fa fa-lock"></i>&nbsp; </span>
+                        </div>
+                        <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                    </div>
+                    <br>
+                    <button class="custom-btn btn btn-lg btn-primary btn-block" name="submit" type="submit"><span style="font-size:16px;">LOGIN</span></button> <br>
+                    <a style="color:#0069FF;" href="">Forgot your password?</a>
+                    </form>
+
+                </div>
+            </div>
+
+        </center>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+</body>
+
+</html>
