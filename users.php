@@ -12,7 +12,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clients</title>
+    <title>Employees</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@ session_start();
           
     <?php
   
-    if(isset($_SESSION['id'])){
+    if(isset($_SESSION['type'])==1){
                     
     } else{
          header("Location: ./index.php");
@@ -120,7 +120,7 @@ session_start();
                 
                 <div class="row">
     <div class="col">
-     <h2 style="color:white; padding:10px;" class="avenir-light">Clients</h2>
+     <h2 style="color:white; padding:10px;" class="avenir-light">Employees</h2>
     </div>
     <div class="col">
 &nbsp;
@@ -135,13 +135,16 @@ session_start();
 &nbsp;
     </div>
                     <div class="col">
-    <button type="button" class="btn btn-primary small custom-btn custom-btn-height shadow"  style="float: right; width:12em;">ADD CLIENT</button>
+    <form action="addUser.php" method="POST">        
+                        
+    <button type="submit" name="submit" class="btn btn-primary small custom-btn custom-btn-height shadow"  style="float: right; width:12em;">ADD EMPLOYEE</button>
+                        </form>
     </div>
   </div>
                 
                 
            
-<div class="shadow custom-round content" style="overflow-y:scroll; background-color: white;">
+<div class="shadow custom-round content" style="overflow-y:scroll; height:400px; background-color: white;">
         
 </div>      
              

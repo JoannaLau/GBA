@@ -12,7 +12,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clients</title>
+    <title>Employees</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@ session_start();
           
     <?php
   
-    if(isset($_SESSION['id'])){
+    if(isset($_SESSION['type'])==1){
                     
     } else{
          header("Location: ./index.php");
@@ -120,7 +120,7 @@ session_start();
                 
                 <div class="row">
     <div class="col">
-     <h2 style="color:white; padding:10px;" class="avenir-light">Clients</h2>
+     <h2 style="color:white; padding:10px;" class="avenir-light">Employees</h2>
     </div>
     <div class="col">
 &nbsp;
@@ -135,18 +135,137 @@ session_start();
 &nbsp;
     </div>
                     <div class="col">
-    <button type="button" class="btn btn-primary small custom-btn custom-btn-height shadow"  style="float: right; width:12em;">ADD CLIENT</button>
+                        
+                  <form action="addUser.php" method="POST">        
+                        
+    <button type="submit" name="submit" class="btn btn-primary small custom-btn custom-btn-height shadow"  style="float: right; width:12em;">ADD EMPLOYEE</button>
+                        </form>
     </div>
   </div>
                 
-                
-           
-<div class="shadow custom-round content" style="overflow-y:scroll; background-color: white;">
+                           
+<div class="shadow custom-round content"  style="overflow-y:scroll; background-color: white;">
         
+    <br>
+   <div class="container">
+
+    <h4>Add Employee</h4>
+       
+       <br>
+       
+       <form action="includes/signup.inc.php" method="POST">
+             <div class="row">
+                 <div class="col">
+                  <label for="userType">User Type:</label>
+  <select class="form-control" id="userType">
+    <option>Employee</option>
+    <option>Admin</option>
+      
+  </select>
+                 </div>
+           
+           
+           
+           
+                 <div class="col"> &nbsp;</div>
+                 <div class="col"> &nbsp;</div>
+                 
+                 <div class="col"> &nbsp;</div>
+           
+           </div>
+         <br><br>
+           
+           <div class="row">
+              <div class="col"><label>First Name: &nbsp;</label><input type="text" name="firstName"></div> 
+              <div class="col"><label>Last Name: &nbsp;</label><input type="text" name="lastName"></div>
+              <div class="col">&nbsp;</div>
+              
+           </div>   
+           <br>
+       
+           <div class="row">
+              <div class="col">
+       <label>Username: &nbsp;</label><input type="text" name="username"><br><br>
+               </div></div>
+       
+          <div class="row">
+              <div class="col"><label>Password: &nbsp;</label><input type="password" name="password"></div> 
+              <div class="col"><label>Confirm Password: &nbsp;</label><input type="password" name="confirmPassword"></div>
+                   <div class="col">&nbsp;</div>
+           </div> 
+        <span style="font-size:11px; color: grey;">(Password must be at least 8 characters and must contain both alphanumeric charcters)</span>
+           
+           <br><br><br>
+           <h5>User Permissions</h5>
+       
+            <br>
+           
+     <div class="row">
+              <div class="col">       
+           
+           <div class="checkbox">
+  <label><input type="checkbox" value="mp">Mayor's Permit</label>
+</div>
+<div class="checkbox">
+  <label><input type="checkbox" value="ml">Municipal License</label>
+</div>
+<div class="checkbox">
+  <label><input type="checkbox" value="ct">Community Tax</label>
+</div>
+                  
+<div class="checkbox">
+  <label><input type="checkbox" value="fire">Fire Safety</label>
+</div>
+                  
+                  
+<div class="checkbox">
+  <label><input type="checkbox" value="ins">Insurance</label>
+</div>
+         
+           
+<div class="checkbox">
+  <label><input type="checkbox" value="bgy">Barangay</label>
+</div>
+       
+           
+<div class="checkbox">
+  <label><input type="checkbox" value="zng">Zoning</label>
+</div>
+
+<div class="checkbox">
+  <label><input type="checkbox" value="lc">Locational</label>
+</div>
+
+<div class="checkbox">
+  <label><input type="checkbox" value="sani">Sanitary</label>
+</div>
+
+                  
+<div class="checkbox">
+  <label><input type="checkbox" value="0605">BIR Annual Fee</label>
+</div>
+    
+           
+        
+         </div>           
+           
+           
+           
+           
+           
+           
+</div>
+           
+       </form>
+    
+    
+    </div>
+    
+    
+    
 </div>      
-             
-            </div>
-            
+             </div>   
+        
             <br>
         </div>
         <!-- /#page-content-wrapper -->

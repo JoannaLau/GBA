@@ -31,7 +31,7 @@ session_start();
       
     <?php
   
-    if(isset($_SESSION['u_id'])){
+    if(isset($_SESSION['id'])){
                     header("Location: ./clients.php");
                         exit();
     }
